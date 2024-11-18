@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5F3A66E22CD922D9000571E1 /* Player in Frameworks */ = {isa = PBXBuildFile; productRef = 5F3A66E12CD922D9000571E1 /* Player */; };
+		5F9D5C722CCFF27A00245668 /* Alert in Frameworks */ = {isa = PBXBuildFile; productRef = 5F9D5C712CCFF27A00245668 /* Alert */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5F548CD62CCAC44B00A599C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,7 +34,25 @@
 		5F548CDF2CCAC44B00A599C8 /* StateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5F3A66E42CD925A9000571E1 /* Exceptions for "Packages" folder in "State" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Alert,
+			);
+			target = 5F548CC32CCAC44A00A599C8 /* State */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5F3A66E32CD925A9000571E1 /* Packages */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5F3A66E42CD925A9000571E1 /* Exceptions for "Packages" folder in "State" target */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 		5F548CC62CCAC44A00A599C8 /* State */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = State;
@@ -52,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9D5C722CCFF27A00245668 /* Alert in Frameworks */,
+				5F3A66E22CD922D9000571E1 /* Player in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +100,11 @@
 		5F548CBB2CCAC44A00A599C8 = {
 			isa = PBXGroup;
 			children = (
+				5F3A66E32CD925A9000571E1 /* Packages */,
 				5F548CC62CCAC44A00A599C8 /* State */,
 				5F548CD82CCAC44B00A599C8 /* StateTests */,
 				5F548CE22CCAC44B00A599C8 /* StateUITests */,
+				5F9D5C702CCFF27A00245668 /* Frameworks */,
 				5F548CC52CCAC44A00A599C8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +117,13 @@
 				5F548CDF2CCAC44B00A599C8 /* StateUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5F9D5C702CCFF27A00245668 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,10 +142,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				5F3A66E32CD925A9000571E1 /* Packages */,
 				5F548CC62CCAC44A00A599C8 /* State */,
 			);
 			name = State;
 			packageProductDependencies = (
+				5F9D5C712CCFF27A00245668 /* Alert */,
+				5F3A66E12CD922D9000571E1 /* Player */,
 			);
 			productName = State;
 			productReference = 5F548CC42CCAC44A00A599C8 /* State.app */;
@@ -171,13 +208,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					5F548CC32CCAC44A00A599C8 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 					5F548CD42CCAC44B00A599C8 = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1610;
 						TestTargetID = 5F548CC32CCAC44A00A599C8;
 					};
 					5F548CDE2CCAC44B00A599C8 = {
@@ -195,6 +233,8 @@
 			);
 			mainGroup = 5F548CBB2CCAC44A00A599C8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5F548CC52CCAC44A00A599C8 /* Products */;
 			projectDirPath = "";
@@ -303,6 +343,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -364,6 +405,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -388,10 +430,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = State/State.entitlements;
+				CODE_SIGN_ENTITLEMENTS = State/Resources/State.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"State/Preview Content\"";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"State/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -412,10 +455,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.redspace.State;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
@@ -425,10 +469,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = State/State.entitlements;
+				CODE_SIGN_ENTITLEMENTS = State/Resources/State.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"State/Preview Content\"";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"State/Resources/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -449,10 +494,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.redspace.State;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,7";
 				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
@@ -461,8 +507,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
@@ -472,6 +520,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/State.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/State";
@@ -483,8 +532,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
@@ -506,6 +557,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
@@ -527,6 +579,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
@@ -583,6 +636,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F3A66E12CD922D9000571E1 /* Player */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Player;
+		};
+		5F9D5C712CCFF27A00245668 /* Alert */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Alert;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5F548CBC2CCAC44A00A599C8 /* Project object */;
 }
